@@ -1,0 +1,214 @@
+:root {
+    --clr-primary-hsl-400: 252, 100%, 67%;
+    --clr-primary-hsl-500: 256, 72%, 46%;
+    --clr-secondary-hsl-400: 241, 81%, 54%;
+    --clr-secondary-hsl-500: 241, 72%, 46%;
+  
+    --clr-neutral-hsl-100: 0, 0%, 100%;
+    --clr-neutral-hsl-200: 221, 100%, 96%;
+    --clr-neutral-hsl-300: 241, 100%, 89%;
+    --clr-neutral-hsl-700: 224, 30%, 27%;
+  
+    --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+    --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+    --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+    --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+  
+  
+    --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+    --clr-primary-500: hsla(var(--clr-primary-hsl-500));
+    --clr-secondary-400: hsl(var(--clr-secondary-hsl-400));
+  
+    --gradient-primary: linear-gradient(
+        var(--clr-primary-400), 
+        var(--clr-secondary-400));
+  
+    --gradient-to-transparent: linear-gradient(
+        var(--clr-primary-500),
+        hsl(var(--clr-secondary-hsl-500), 0));
+  
+    --clr-accent-1: 0, 100%, 67%;
+    --clr-accent-2: 39, 100%, 56%;
+    --clr-accent-3: 166, 100%, 37%;
+    --clr-accent-4: 234, 85%, 45%;
+  
+    --font-family-default: 'HankenGrotesk', sans-serif;
+  
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-black: 800;
+  
+    --fs-400: 1.125rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.75rem;
+    --fs-800: 2rem;
+    --fs-900: 5rem;
+
+    --bordr-radios: 30px
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+  * {
+    font: inherit;
+  }
+
+body {
+    font-family: "Hanken Grotesk";
+    font-size: 18px;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    color: var(--clr-neutral-700);
+
+}
+
+h1 {
+    font-size: 2.383rem;
+}
+
+/*Layout*/
+
+.container {
+    display: grid;
+    max-width: 100vw;
+    max-height: 100vh;
+
+}
+
+@media  screen and (min-width: 600px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        max-height: 115rem;
+        max-width: 75rem;
+        box-shadow: .5rem 1rem 3rem hsl(var(--clr-neutral-hsl-700), .2);
+        border-radius: var(--bordr-radios);
+    }
+
+    .summary-box{
+        border-radius: var(--bordr-radios) 0 ;
+    }
+}
+
+.result-box{
+    border-radius: var(--bordr-radios);
+    text-align: center;
+    padding: 4rem;
+    overflow: hidden;
+    background-color: var(--clr-primary-400);
+    color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .result-box{
+        border-radius: 0 0   var(--bordr-radios)  var(--bordr-radios);;
+    }
+}
+
+.summary-box {
+    box-shadow: 15px 18px 23px -16px rgba(31,52,94,0.75);
+
+    padding-left: 2rem;
+    padding: 4rem;
+}
+
+.section-title {
+    font-weight: var(--fw-bold);
+    opacity: .9;
+  }
+
+.button {
+    width: 100%;
+    background-color: var(--clr-primary-400);
+    border: 0;
+    border-radius: var(--bordr-radios);
+    padding: 1.5rem 3rem;
+    color: white;
+    margin-top: 2rem;
+}
+
+.button:hover {
+    background-color: var(--clr-primary-500);
+}
+
+.main_score {
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    background: var(--gradient-to-transparent);
+    display: grid;
+    place-content: center;
+    width: 100%;
+}
+
+.highlighted-figure {
+    font-size: 9rem;
+
+}
+
+.overall-figure , .result-description {
+    opacity: .5;
+}
+
+.summary {
+    display: grid;
+    gap: 2.5rem;
+}
+  
+
+.summary-score {
+    font-weight: var(--fw-black);
+    color: hsl(var(--clr-neutral-hsl-700), .5);
+}
+.summary-score span {
+    color: var(--clr-neutral-700);
+}
+.accent--1 , .accent--2 , .accent--3 , .accent--4 {
+    border-radius: 5px;
+    padding: 0 1rem;
+}
+.accent--1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(var(--clr-accent-1) , .1);
+    stroke: hsl(var(--clr-accent-1));
+}
+.accent--2 {
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(var(--clr-accent-2) , .1);
+    stroke: hsl(var(--clr-accent-2));
+    align-items: center;
+
+    
+}
+.accent--3 {
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(var(--clr-accent-3) , .1);
+    stroke: hsl(var(--clr-accent-3));
+    align-items: center;
+
+
+}
+.accent--4 {
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(var(--clr-accent-4) , .1);
+    stroke: hsl(var(--clr-accent-4));
+    align-items: center;
+
+
+}
+
+.scores-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scores-container p {
+    margin-left: 1rem;
+}
