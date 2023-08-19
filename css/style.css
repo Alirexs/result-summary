@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Outfit:wght@400;700&display=swap');
 :root {
     --clr-primary-hsl-400: 252, 100%, 67%;
     --clr-primary-hsl-500: 256, 72%, 46%;
@@ -32,7 +33,7 @@
     --clr-accent-3: 166, 100%, 37%;
     --clr-accent-4: 234, 85%, 45%;
   
-    --font-family-default: 'HankenGrotesk', sans-serif;
+    --font-family-default: 'Hanken Grotesk', Times , sans-serif;
   
     --fw-regular: 500;
     --fw-bold: 700;
@@ -48,20 +49,25 @@
     --bordr-radios: 30px
   }
 
+
+
   html {
     font-size: 62.5%;
+    font-family: var(--font-family-default);
   }
   * {
     font: inherit;
+    margin: 0;
+    box-sizing: border-box;
   }
 
 body {
-    font-family: "Hanken Grotesk";
     font-size: 18px;
     display: grid;
     place-content: center;
     height: 100vh;
     color: var(--clr-neutral-700);
+
 
 }
 
@@ -73,16 +79,15 @@ h1 {
 
 .container {
     display: grid;
-    max-width: 100vw;
+    width: 100vw;
     max-height: 100vh;
 
 }
 
 @media  screen and (min-width: 600px) {
     .container {
+        max-width: 70rem;
         grid-template-columns: 1fr 1fr;
-        max-height: 115rem;
-        max-width: 75rem;
         box-shadow: .5rem 1rem 3rem hsl(var(--clr-neutral-hsl-700), .2);
         border-radius: var(--bordr-radios);
     }
@@ -95,65 +100,86 @@ h1 {
 .result-box{
     border-radius: var(--bordr-radios);
     text-align: center;
-    padding: 4rem;
+    padding: 5rem;
+    padding-top: 2.5rem;
     overflow: hidden;
-    background-color: var(--clr-primary-400);
+    background: var(--gradient-primary);
     color: #fff;
+}
+
+.result-box h1:nth-of-type(2) {
+    font-weight: 600;
+    font-size: 2.5rem;
+
 }
 
 @media screen and (max-width: 600px) {
     .result-box{
         border-radius: 0 0   var(--bordr-radios)  var(--bordr-radios);;
     }
+
 }
 
 .summary-box {
     box-shadow: 15px 18px 23px -16px rgba(31,52,94,0.75);
-
     padding-left: 2rem;
-    padding: 4rem;
+    padding: 0 4rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .section-title {
     font-weight: var(--fw-bold);
-    opacity: .9;
+    color: hsl(var(--clr-neutral-hsl-100), .7);
+
   }
 
 .button {
     width: 100%;
-    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100); 
     border: 0;
     border-radius: var(--bordr-radios);
+    background: var(--clr-neutral-700);
     padding: 1.5rem 3rem;
-    color: white;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .button:hover {
-    background-color: var(--clr-primary-500);
+    background: var(--gradient-primary);
+
 }
 
 .main_score {
-    border-radius: 100%;
+    border-radius: 50%;
     aspect-ratio: 1/1;
     background: var(--gradient-to-transparent);
     display: grid;
     place-content: center;
-    width: 100%;
+    width: 80%;
+    margin-inline: auto;
+    margin-top: 3rem;
 }
 
 .highlighted-figure {
-    font-size: 9rem;
+    font-size: 8rem;
+    font-weight: bold;
 
 }
 
 .overall-figure , .result-description {
-    opacity: .5;
+    opacity: .6;
 }
 
 .summary {
     display: grid;
-    gap: 2.5rem;
+    gap: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.summary h1 {
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
   
 
@@ -165,8 +191,8 @@ h1 {
     color: var(--clr-neutral-700);
 }
 .accent--1 , .accent--2 , .accent--3 , .accent--4 {
-    border-radius: 5px;
-    padding: 0 1rem;
+    border-radius: 8px;
+    padding: 2rem 1rem;
 }
 .accent--1 {
     display: flex;
@@ -174,6 +200,7 @@ h1 {
     align-items: center;
     background-color: hsl(var(--clr-accent-1) , .1);
     stroke: hsl(var(--clr-accent-1));
+    color: hsl(var(--clr-accent-1));
 }
 .accent--2 {
     display: flex;
@@ -181,6 +208,7 @@ h1 {
     background-color: hsl(var(--clr-accent-2) , .1);
     stroke: hsl(var(--clr-accent-2));
     align-items: center;
+    color:hsl(var(--clr-accent-2)) ;
 
     
 }
@@ -190,6 +218,7 @@ h1 {
     background-color: hsl(var(--clr-accent-3) , .1);
     stroke: hsl(var(--clr-accent-3));
     align-items: center;
+    color: hsl(var(--clr-accent-3));
 
 
 }
@@ -199,6 +228,7 @@ h1 {
     background-color: hsl(var(--clr-accent-4) , .1);
     stroke: hsl(var(--clr-accent-4));
     align-items: center;
+    color:hsl(var(--clr-accent-4)) ;
 
 
 }
